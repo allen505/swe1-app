@@ -3,14 +3,14 @@ dist: focal
 language: python
 python:
   - "3.9"
-#  - "3.10"
-# command to install dependencies
+# Install dependencies
 install:
   - pip install -r mysite/requirements.txt
-  - pip install black
-# command to run tests
-run:
+  - pip install black flake8
+# Change directory
 before_script: cd mysite
+# Run format and lint checks
 script:
   - black --check
+  - flake8 ./
   - python manage.py test

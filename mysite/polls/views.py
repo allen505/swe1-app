@@ -9,7 +9,7 @@ from .models import Choice, Question
 class IndexView(generic.ListView):
     template_name = "polls/index.html"
     context_object_name = "latest_question_list"
-
+    
     def get_queryset(self):
         """Return the last five published questions."""
         return Question.objects.order_by("-pub_date")[:5]
@@ -45,4 +45,5 @@ def vote(request, question_id):
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
-        return HttpResponseRedirect(reverse("polls:results", args=(question.id,)))
+        return HttpResponseRedirect(
+            reverse("polls:results", args=(question.id,)))
