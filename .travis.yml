@@ -13,5 +13,5 @@ script:
   - black --check .
   - flake8 .
   - coverage run manage.py test
-  - coverage report && coverage xml
-  - genbadge coverage -i coverage.xml
+  - coverage report
+  - coveralls
