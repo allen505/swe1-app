@@ -22,7 +22,7 @@ deploy:
   region: us-east-1
   app: mysite
   env: def-env
-  bucket_name: 'swe_src'
+  bucket_name: 'elasticbeanstalk-us-east-1-897722690729'
   on:
     all_branches: true
 #    repo: allen505/swe1-app
