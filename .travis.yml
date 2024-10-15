@@ -6,11 +6,12 @@ python:
 # Install dependencies
 install:
   - pip install -r mysite/requirements.txt
-  - pip install black flake8
 # Change directory
 before_script: cd mysite
 # Run format and lint checks
 script:
   - black --check .
   - flake8 .
-  - python manage.py test
+  - coverage run manage.py test
+  - coverage report && coverage xml
+  - genbadge coverage -i coverage.xml
