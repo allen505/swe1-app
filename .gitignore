@@ -137,4 +137,5 @@ GitHub.sublime-settings
 !.vscode/extensions.json
 .history
 
-.idea/*
+.idea/
+/aws_accessKeys.csv
