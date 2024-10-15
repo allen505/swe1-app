@@ -24,7 +24,10 @@ deploy:
   env: def-env
   bucket_name: 'swe_src'
   on:
-    repo: allen505/swe1-app
-  skip_cleanup: 'true'
+    all_branches: true
+#    repo: allen505/swe1-app
+#    branches:
+#      only:
+#        - master
 after_script:
   - coveralls
