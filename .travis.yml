@@ -6,15 +6,17 @@ python:
 install:
   - pip install -r mysite/requirements.txt
 # Change directory
-before_script: cd mysite
+before_script:
+  - cd mysite
+  - python manage.py migrate
 # Run format and lint checks
 script:
   - black --check .
   - flake8 .
   - coverage run manage.py test
   - coverage report
-before_deploy:
-  - python manage.py migrate
+#before_deploy:
+#  - python manage.py migrate
 deploy:
   provider: elasticbeanstalk
   access_key_id: $AWS_ACS_KEY
