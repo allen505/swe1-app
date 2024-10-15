@@ -7,9 +7,10 @@ python:
 # command to install dependencies
 install:
   - pip install -r mysite/requirements.txt
+  - pip install black
 # command to run tests
 run:
 before_script: cd mysite
 script:
-  - sqlite3 --version
+  - black --check
   - python manage.py test
