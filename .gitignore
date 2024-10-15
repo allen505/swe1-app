@@ -139,3 +139,4 @@ GitHub.sublime-settings
 
 .idea/
 /aws_accessKeys.csv
+/travisCi_accessKeys.csv
