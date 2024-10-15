@@ -32,5 +32,3 @@ deploy:
 #    branches:
 #      only:
 #        - master
-after_script:
-  - coveralls
