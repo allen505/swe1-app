@@ -2,6 +2,10 @@ dist: focal
 language: python
 python:
   - "3.9"
+env:
+  global:
+    - COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN
+    - COVERALLS_BRANCH=$TRAVIS_BRANCH
 # Install dependencies
 install:
   - pip install -r mysite/requirements.txt
@@ -11,14 +15,14 @@ before_script:
   - python manage.py migrate
 # Run format and lint checks
 script:
+  - echo "Travis Branch is $TRAVIS_BRANCH"
+  - echo "Travis Commit is $TRAVIS_COMMIT"
   - black --check .
   - flake8 .
   - coverage run manage.py test
 #  - coverage report
 after_success:
   - coveralls --verbose
-#before_deploy:
-#  - python manage.py migrate
 deploy:
   provider: elasticbeanstalk
   access_key_id: $AWS_ACS_KEY
