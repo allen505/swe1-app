@@ -14,8 +14,9 @@ script:
   - black --check .
   - flake8 .
   - coverage run manage.py test
-  - coverage report
-  - coveralls --service=travis-ci --verbose
+#  - coverage report
+after_success:
+  - coveralls --verbose
 #before_deploy:
 #  - python manage.py migrate
 deploy:
