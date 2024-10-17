@@ -3,5 +3,5 @@
   
 [![Coverage Status](https://coveralls.io/repos/github/allen505/swe1-app/badge.svg?branch=main)](https://coveralls.io/github/allen505/swe1-app?branch=main)  
 
-Repo to demonstrate SWE 
+Repo to demonstrate SWE
 
